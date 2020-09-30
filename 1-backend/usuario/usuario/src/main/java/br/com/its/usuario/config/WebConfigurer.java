@@ -1,0 +1,18 @@
+package br.com.its.usuario.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+public class WebConfigurer implements WebMvcConfigurer {
+	
+	
+	public void addCorsMapping(CorsRegistry registry) {
+		
+		registry.addMapping( "/**")
+			.allowedOrigins("http://localhost:4200")
+			.allowedMethods( "GET", "PUT", "PATCH", "DELETE" , "POST", "OPTIONS");
+		
+	}
+
+}
